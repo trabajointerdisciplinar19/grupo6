@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 280
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,18 +116,18 @@ TextureImporter:
       name: Idle (7)_0
       rect:
         serializedVersion: 2
-        x: 13
+        x: 10
         y: 62
-        width: 283
+        width: 286
         height: 472
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.18837085, y: -0.000000024245956}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 258f55faf75b94a41b175976ddb6c456
+      spriteID: f971a7003fe72274b9a0653504b09a4b
       internalID: -8314586546807937364
       vertices: []
       indices: 
