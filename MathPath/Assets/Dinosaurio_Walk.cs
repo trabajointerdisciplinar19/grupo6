@@ -9,10 +9,12 @@ public class Dinosaurio_Walk : MonoBehaviour
     public float maxvelocidad;
     bool voltearDinosaurio=true;
     SpriteRenderer DinoRenderer;
+    Animator DinosaurioAnim;
     void Start()
     {
         dinosaurio = GetComponent<Rigidbody2D> ();
         DinoRenderer = GetComponent<SpriteRenderer> ();
+        DinosaurioAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class Dinosaurio_Walk : MonoBehaviour
             Voltear();
         }
         dinosaurio.velocity = new Vector2(mover * maxvelocidad, dinosaurio.velocity.y);
+        DinosaurioAnim.SetFloat("Velocidad_movimiento", Mathf.Abs(mover));
     }
     void Voltear(){
         voltearDinosaurio = !voltearDinosaurio;
