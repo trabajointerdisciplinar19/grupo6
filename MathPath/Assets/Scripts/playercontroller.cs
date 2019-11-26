@@ -31,7 +31,7 @@ public class playercontroller : MonoBehaviour
 
 
         float limiteSpeed = Mathf.Clamp(rb2d.velocity.x, -maxSpeed, maxSpeed);
-            rb2d.velocity = new Vector2(limiteSpeed, rb2d.velocity.y);
+        rb2d.velocity = new Vector2(limiteSpeed, rb2d.velocity.y);
         
         Debug.Log(rb2d.velocity.x);
     }
