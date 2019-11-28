@@ -79,6 +79,7 @@ public class conexion : MonoBehaviour
         if(c>0)
         {
             Debug.Log("Se inicio sesión correctamente");
+            Application.LoadLevel("menu");
         }
         else
         {
