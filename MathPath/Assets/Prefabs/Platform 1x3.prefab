@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5023482122009915959}
   m_Layer: 0
   m_Name: L
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +123,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 4181731752541328926}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9b79a71e4d3a78346bf79d7accc95507, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 2910100507749118604}
   m_Layer: 0
   m_Name: Center
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

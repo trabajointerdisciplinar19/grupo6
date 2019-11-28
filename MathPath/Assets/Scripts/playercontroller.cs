@@ -29,22 +29,33 @@ public class playercontroller : MonoBehaviour
     }
 
     void FixedUpdate(){
-        
+        Vector3 fixedVelocity = rb2d.velocity;
+        fixedVelocity *= 0.75f;
+
+        if (grounded){
+            rb2d.velocity = fixedVelocity;
+        }
         float h = Input.GetAxis("Horizontal");
         rb2d.AddForce(Vector2.right * speed * h);
 
         float limiteSpeed = Mathf.Clamp(rb2d.velocity.x, -maxSpeed, maxSpeed);
         rb2d.velocity = new Vector2(limiteSpeed, rb2d.velocity.y);
         anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
+
         if (h <0.0f){
             PlayerRenderer.flipX = true;
         }
         else if (h >0.0f){
             PlayerRenderer.flipX = false;
         }
+
         if (isJump){
+            rb2d.velocity = new Vector2(rb2d.velocity.x, 0);
             rb2d.AddForce(Vector2.up * jumpPower,ForceMode2D.Impulse);
             isJump = false;
         }
+    }
+    private void OnBecameInvisible(){
+        transform.position = new Vector3(0, 0, 0);
     }
 }
