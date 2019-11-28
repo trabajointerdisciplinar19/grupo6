@@ -18,7 +18,7 @@ public class menu : MonoBehaviour
 
     public void Iniciar()
     {
-        Application.LoadLevel("SampleScene");
+        Application.LoadLevel("elegirpersonaje");
     }
 
     public void Salir()
