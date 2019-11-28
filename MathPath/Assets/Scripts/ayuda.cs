@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class menu : MonoBehaviour
+public class ayuda : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void Iniciar()
+    public void ventanayuda()
     {
-        Application.LoadLevel("elegirpersonaje");
+        Application.LoadLevel("AYUDA");
     }
 
     public void Salir()
