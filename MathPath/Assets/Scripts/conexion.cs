@@ -10,7 +10,7 @@ public class conexion : MonoBehaviour
 {
     public GameObject Input;
     public GameObject Input2;
-
+    public GameObject Input5;
     public GameObject Input3;
     public GameObject Input4;
     public GameObject login;
@@ -28,17 +28,9 @@ public class conexion : MonoBehaviour
         dbconn = (IDbConnection)new SqliteConnection(conn);
         dbconn.Open();
         IDbCommand dbcmd = dbconn.CreateCommand();
-        string sqlQuery = "INSERT INTO Usuario (Nickname, Contraseña, Puntaje) VALUES ('" + Input.GetComponent<Text>().text+"' , '" + Input2.GetComponent<Text>().text + "' , '" + 0 + "')";
+        string sqlQuery = "INSERT INTO Usuario (Nickname, Contraseña, Puntaje, Nota) VALUES ('" + Input.GetComponent<Text>().text+"' , '" + Input2.GetComponent<Text>().text + "' , '" + 0 + "' , '" + Input5.GetComponent<Text>().text + "')";
         dbcmd.CommandText = sqlQuery;
         IDataReader reader = dbcmd.ExecuteReader();
-        while (reader.Read())
-        {
-            string value = reader.GetString(0);
-            string name = reader.GetString(1);
-            int rand = reader.GetInt32(2);
-            Debug.Log("Nickname= " + value + " Password= " + name + " Score= " + rand);
-            
-        }
         Debug.Log("Nickname= REGISTRADO");
         reader.Close();
         reader = null;
