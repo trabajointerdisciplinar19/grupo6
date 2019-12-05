@@ -9,6 +9,7 @@ public class playercontroller : MonoBehaviour
     public bool grounded;
     public float jumpPower = 6.5f;
     public bool isJump;
+    public bool doubleJump;
     private Rigidbody2D rb2d;
     private Animator anim;
     private SpriteRenderer PlayerRenderer;
@@ -24,7 +25,9 @@ public class playercontroller : MonoBehaviour
         
         anim.SetBool("Grounded", grounded);
         if (Input.GetKeyDown(KeyCode.UpArrow)&&grounded){
+
             isJump = true;
+            doubleJump = true;
         }
     }
 
