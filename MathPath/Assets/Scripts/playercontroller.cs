@@ -58,6 +58,17 @@ public class playercontroller : MonoBehaviour
             isJump = false;
         }
     }
+    public void EnemyJump()
+    {
+        Debug.Log("AA");
+        isJump= true;
+    }
+    public void EnemyKnockBack(float enemyPosX)
+    {
+        float side = Mathf.Sign(enemyPosX - transform.position.x);
+        isJump = true;
+        rb2d.AddForce(Vector2.left * side * jumpPower, ForceMode2D.Impulse);
+    }
     private void OnBecameInvisible(){
         transform.position = new Vector3(0, 0, 0);
     }

@@ -41,7 +41,16 @@ public class eneyController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("PLAYER____________");
+            float yOffSet = 1.18f;
+            if (transform.position.y + yOffSet < collision.transform.position.y)
+            {
+                collision.gameObject.GetComponentInParent<playercontroller>().EnemyJump();
+                Destroy(gameObject);
+            }
+            else
+            {
+                collision.gameObject.GetComponentInParent<playercontroller>().EnemyKnockBack(transform.position.x);
+            }
         }
         
     }
