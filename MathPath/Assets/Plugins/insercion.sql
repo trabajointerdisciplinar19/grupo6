@@ -1,0 +1,16 @@
+Insert into Registro (idreg,Nickalumno,Notaal,Fecha,Score) values (1,'Mayra Motto Cruz',14,05-12-2019,15);
+Insert into Registro (idreg,Nickalumno,Notaal,Fecha,Score) values (2,'Mayra Motto Cruz',14,15-12-2019,16);
+Insert into Registro (idreg,Nickalumno,Notaal,Fecha,Score) values (3,'Mayra Motto Cruz',14,25-12-2019,17);
+Insert into Registro (idreg,Nickalumno,Notaal,Fecha,Score) values (4,'Mayra Motto Cruz',14,10-01-2020,18);
+Insert into Registro (idreg,Nickalumno,Notaal,Fecha,Score) values (5,'Mayra Motto Cruz',14,15-02-2020,19);
+Insert into Registro (idreg,Nickalumno,Notaal,Fecha,Score) values (6,'Mayra Motto Cruz',14,05-03-2020,20);
+Insert into Registro (idreg,Nickalumno,Notaal,Fecha,Score) values (7,'Mayra Motto Cruz',14,05-04-2020,19);
+Insert into Registro (idreg,Nickalumno,Notaal,Fecha,Score) values (8,'Mayra Motto Cruz',14,05-12-2020,18);
+Insert into Registro (idreg,Nickalumno,Notaal,Fecha,Score) values (9,'Valeria Nicol Saraza Aragon',6,05-12-2019,13);
+Insert into Registro (idreg,Nickalumno,Notaal,Fecha,Score) values (10,'Valeria Nicol Saraza Aragon',6,15-12-2019,14);
+Insert into Registro (idreg,Nickalumno,Notaal,Fecha,Score) values (11,'Valeria Nicol Saraza Aragon',6,25-12-2019,17);
+Insert into Registro (idreg,Nickalumno,Notaal,Fecha,Score) values (12,'Valeria Nicol Saraza Aragon',6,10-01-2020,17);
+Insert into Registro (idreg,Nickalumno,Notaal,Fecha,Score) values (13,'Daniela Molguin Huamani',6,05-12-2019,11);
+Insert into Registro (idreg,Nickalumno,Notaal,Fecha,Score) values (14,'Daniela Molguin Huamani',6,10-12-2019,12);
+Insert into Registro (idreg,Nickalumno,Notaal,Fecha,Score) values (15,'Tatiana Valeria Mayta Cuevas',11,11-12-2019,15);
+Insert into Registro (idreg,Nickalumno,Notaal,Fecha,Score) values (16,'Tatiana Valeria Mayta Cuevas',11,19-12-2019,17);
