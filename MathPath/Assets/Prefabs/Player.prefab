@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5532900376638851007}
   - component: {fileID: 4547156716025097415}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 7583037178814952248}
   - component: {fileID: 7583037178814952249}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GroundCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,6 +257,7 @@ MonoBehaviour:
   grounded: 0
   jumpPower: 15
   isJump: 0
+  doubleJump: 0
 --- !u!114 &7583037179224156168
 MonoBehaviour:
   m_ObjectHideFlags: 0

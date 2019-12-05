@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class ChekGround : MonoBehaviour 
 {
     private playercontroller player;
@@ -25,29 +25,38 @@ public class ChekGround : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
 
-        
-        if(collision.gameObject.tag == "Ground")
+        try
         {
-            player.grounded = true;
+            if (collision.gameObject.tag == "Ground")
+            {
+                player.grounded = true;
+            }
+            if (collision.gameObject.tag == "Platform")
+            {
+                player.transform.parent = collision.transform;
+                player.grounded = true;
+            }
         }
-        if (collision.gameObject.tag == "Platform")
+        catch (NullReferenceException e)
         {
-            player.transform.parent = collision.transform;
-            player.grounded = true;
-        }
 
+        }
     }
   
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision != null&& collision.gameObject.tag == "Ground")
+        try
         {
-            player.grounded = false;
+            if (collision != null && collision.gameObject.tag == "Ground")
+            {
+                player.grounded = false;
+            }
+            if (collision.gameObject.tag == "Platform")
+            {
+                player.transform.parent = null;
+                player.grounded = false;
+            }
         }
-        if (collision.gameObject.tag == "Platform")
-        {
-            player.transform.parent = null;
-            player.grounded = false;
-        }
+        catch(NullReferenceException e){ }
     }
 }
