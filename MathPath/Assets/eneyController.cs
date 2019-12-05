@@ -49,6 +49,7 @@ public class eneyController : MonoBehaviour
             }
             else
             {
+
                 collision.gameObject.GetComponentInParent<playercontroller>().EnemyKnockBack(transform.position.x);
             }
         }
