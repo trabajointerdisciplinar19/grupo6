@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Platform
+  - elec01
+  - elec02
   layers:
   - Default
   - TransparentFX
