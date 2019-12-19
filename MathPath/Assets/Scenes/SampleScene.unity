@@ -326,6 +326,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7583037179224156178, guid: dc8cff0b597ded040a9a034459c16e2b,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583037179224156178, guid: dc8cff0b597ded040a9a034459c16e2b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583037179224156178, guid: dc8cff0b597ded040a9a034459c16e2b,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583037179224156178, guid: dc8cff0b597ded040a9a034459c16e2b,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc8cff0b597ded040a9a034459c16e2b, type: 3}
 --- !u!1001 &37588031
