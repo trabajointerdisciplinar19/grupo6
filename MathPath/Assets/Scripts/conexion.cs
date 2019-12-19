@@ -13,10 +13,13 @@ public class conexion : MonoBehaviour
     public GameObject Input5;
     public GameObject Input3;
     public GameObject Input4;
-    public GameObject Input6;
-    public GameObject Input7;
+    public InputField Input6;
+    public InputField Input7;
     public Button resp1;
+    public Text tes1;
+    public Text tes2;
     public Button resp2;
+    public Button emp;
     public GameObject login;
     public Button btnLogin;
     private string usuario;
@@ -90,7 +93,56 @@ public class conexion : MonoBehaviour
         dbconn = null;
     }
    
- 
-  
+    public int random1()
+    {
+        System.Random r = new System.Random();
+        int res = r.Next(10, 100);
+        return res;
+    }
+    public int random2()
+    {
+        System.Random r = new System.Random();
+        int res = r.Next(101, 200);
+        return res;
+    }
+    public void empezar()
+    {
+        int r1 = random1();
+        string res1 = r1.ToString();
+        Input6.text  = res1;
+        int r2 = random2();
+        string res2 = r2.ToString();
+        Input7.text = res2;
+        int correcta = r1 + r2;
+        string res3 = correcta.ToString();
+        tes1.text= res3;
+        int incorrecta = (r1 + r2)+70;
+        string res4 = incorrecta.ToString();
+        tes2.text = res4;
+    }
+    public void empezar2()
+    {
+        int r1 = random1();
+        string res1 = r1.ToString();
+        Input6.text = res1;
+        int r2 = random2();
+        string res2 = r2.ToString();
+        Input7.text = res2;
+        int correcta = r2 - r1;
+        string res3 = correcta.ToString();
+        tes1.text = res3;
+        int incorrecta = (r2 - r1) + 50;
+        string res4 = incorrecta.ToString();
+        tes2.text = res4;
+    }
+    public void seguir()
+    {
+
+    }
+    public void perder()
+    {
+        Application.LoadLevel("gameover");
+    }
+
 
 }
