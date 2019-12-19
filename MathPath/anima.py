@@ -46,6 +46,15 @@ class ApplicationWindow(QtWidgets.QMainWindow):
         self.alumnos=cursorObj.fetchall()
         self.alumnos=[i[0] for i in self.alumnos]
         self.cont=0
+        self.graf={}
+        for i in self.alumnos:
+            self.graf[i]=[]
+        cursorObj = con.cursor()
+        cursorObj.execute('SELECT registro.nickalumno,registro.fecha,registro.notaal FROM registro')
+        rows = cursorObj.fetchall()
+        print(rows)
+        for i in rows:
+            self.graf[i[0]].append(i[2])
         self.canvas =  MyMplCanvas( self.main_widget,width=5, height=4, dpi=100) ###attention###
         vertical_layout = QVBoxLayout(self.main_widget)
         vertical_layout.addWidget(self.canvas)
@@ -58,6 +67,10 @@ class ApplicationWindow(QtWidgets.QMainWindow):
         self.FCFS.setGeometry(QtCore.QRect(20, 30, 250, 80))
         self.FCFS.setStyleSheet("font: 16pt \"MS Shell Dlg 2\";")
         self.FCFS.setObjectName("Back")
+        self.nom = QtWidgets.QPushButton("Usuario",self.main_widget)
+        self.nom.setGeometry(QtCore.QRect(620, 30, 250, 80))
+        self.nom.setStyleSheet("font: 10pt \"MS Shell Dlg 2\";")
+        self.nom.setObjectName("Usuario")
         self.next = QtWidgets.QPushButton("Next",self.main_widget)
         self.next.setGeometry(QtCore.QRect(320, 30, 250, 80))
         self.next.setStyleSheet("font: 16pt \"MS Shell Dlg 2\";")
@@ -83,24 +96,28 @@ class ApplicationWindow(QtWidgets.QMainWindow):
 
 
     def pro(self):
-    #Array a ejecutar
-        cursorObj = con.cursor()
-        cursorObj.execute('SELECT usuario.nickname,registro.notaal FROM registro inner join usuario on usuario.nickname=registro.Nickalumno')
-        rows = cursorObj.fetchall()
-        print(rows)
-        self.canvas.ax.plot([i[1] for i in rows],[i[0] for i in rows],'o')
+        if self.cont==0:
+            self.cont=len(self.alumnos)-1
+        else:
+            self.cont-=1
+        a=self.alumnos[self.cont]
+        self.nom.setText(a)
+        self.canvas.ax.clear()
+        self.canvas.ax.plot([i for i in range(len(self.graf[a])+1)],[0]+[i for i in self.graf[a]],'o')
+        self.canvas.ax.plot([i for i in range(len(self.graf[a])+1)],[0]+[i for i in self.graf[a]])
         self.canvas.draw()
         #print(12)
     def pro2(self):
-    #Array a ejecutar
-        self.cont+=1
-        cursorObj = con.cursor()
-        cursorObj.execute('SELECT * FROM usuario')
-        rows = cursorObj.fetchall()
-        #print(rows)
-        self.canvas.ax.plot([i[0] for i in rows],[i[2] for i in rows])
+        if self.cont==len(self.alumnos)-1:
+            self.cont=0
+        else:
+            self.cont+=1
+        a=self.alumnos[self.cont]
+        self.nom.setText(a)
+        self.canvas.ax.clear()
+        self.canvas.ax.plot([i for i in range(len(self.graf[a])+1)],[0]+[i for i in self.graf[a]],'o')
+        self.canvas.ax.plot([i for i in range(len(self.graf[a])+1)],[0]+[i for i in self.graf[a]])
         self.canvas.draw()
-        #print(12)
           
     def on_start(self):
         self.ani = FuncAnimation(self.canvas.figure, self.update_line,\
