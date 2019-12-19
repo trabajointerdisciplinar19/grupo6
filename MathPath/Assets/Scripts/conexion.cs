@@ -13,11 +13,14 @@ public class conexion : MonoBehaviour
     public GameObject Input5;
     public GameObject Input3;
     public GameObject Input4;
+    public GameObject Input6;
+    public GameObject Input7;
+    public Button resp1;
+    public Button resp2;
     public GameObject login;
     public Button btnLogin;
     private string usuario;
     private string password;
-
 
 
     // Update is called once per frame
@@ -86,4 +89,8 @@ public class conexion : MonoBehaviour
         dbconn.Close();
         dbconn = null;
     }
+   
+ 
+  
+
 }
