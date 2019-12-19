@@ -48,3 +48,6 @@ TagManager:
   - name: Player
     uniqueID: 2186005299
     locked: 0
+  - name: Interface
+    uniqueID: 4152023439
+    locked: 0

@@ -15,12 +15,15 @@ public class playercontroller : MonoBehaviour
     private Rigidbody2D rb2d;
     private Animator anim;
     private SpriteRenderer PlayerRenderer;
+
+    private GameObject healthbar;
     void Start()
     {
         temp = jumpPower;
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         PlayerRenderer = GetComponent<SpriteRenderer>();
+        healthbar = GameObject.Find("Healthbar");
     }
 
     // Update is called once per frame
@@ -71,6 +74,7 @@ public class playercontroller : MonoBehaviour
     }
     public void EnemyKnockBack(float enemyPosX)
     {
+        healthbar.SendMessage("TakeDamage", 15);
         float side = Mathf.Sign(enemyPosX - transform.position.x);
         isJump = true;
         rb2d.AddForce(Vector2.left * side * jumpPower * 0.5f, ForceMode2D.Impulse);
