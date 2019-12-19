@@ -135,9 +135,39 @@ public class conexion : MonoBehaviour
         string res4 = incorrecta.ToString();
         tes2.text = res4;
     }
+    public void empezar3()
+    {
+        int r1 = random1();
+        string res1 = r1.ToString();
+        Input6.text = res1;
+        int r2 = random2();
+        string res2 = r2.ToString();
+        Input7.text = res2;
+        int correcta = r2 * r1;
+        string res3 = correcta.ToString();
+        tes1.text = res3;
+        int incorrecta = (r2 * r1) + 50;
+        string res4 = incorrecta.ToString();
+        tes2.text = res4;
+    }
+    public void empezar4()
+    {
+        int r1 = random1();
+        string res1 = r1.ToString();
+        Input6.text = res1;
+        int r2 = random2();
+        string res2 = r2.ToString();
+        Input7.text = res2;
+        int correcta = r2 / r1;
+        string res3 = correcta.ToString();
+        tes1.text = res3;
+        int incorrecta = (r2 / r1) + 5;
+        string res4 = incorrecta.ToString();
+        tes2.text = res4;
+    }
     public void seguir()
     {
-
+        Application.LoadLevel("SampleScene");
     }
     public void perder()
     {
